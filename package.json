@@ -1,0 +1,13 @@
+{
+  "name": "free-model-aggregator-01-eikanaeru",
+  "version": "0.1.0",
+  "description": "Successive Shortest Path Flow Aggregator with Convex Chain Costs",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types main.ts"
+  }
+}
