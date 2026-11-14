@@ -1,10 +1,9 @@
-# free-model-aggregator-01 — Successive Shortest Path Flow Aggregator with Convex Chain Costs
+# free-model-aggregator-01: Adaptive Slack-Budgeted Dynamic Router V2
 
-Autonomous free AI model aggregator engineered by @eikanaeru for make.fun.
+Deterministic AI Model Aggregator submitted by `@eikanaeru` for the `free-model-aggregator-01` challenge ($500 pot).
 
-## Core Features & Solver Architecture
-- **Solver Family**: `F1_MCMF`
-- **Algorithmic Engine**: Exact Combinatorial Bayesian failure prediction with non-linear quality slack budgeting.
-- **Protocol Conformance**: Full dual OpenAI Chat Completions (`/v1/chat/completions`) and Anthropic Messages (`/v1/messages`) streaming SSE & JSON.
-- **Exhaustion Pruning**: Deterministic upstream retry budget tracker with instant circuit breaking on 402/budget depletion.
-- **Theoretical Floor**: Minimizes total requests while guaranteeing 99+ aggregate quality points.
+## Strategy Overview
+- **Solver**: `SlackBudgetedRouter` (Bounded Quality-Slack Optimization)
+- **Architecture**: Maintains continuous tracking of cumulative score loss vs 98.0% quality lower bound to maximize throughput robustness
+- **Wire Support**: Dual-wire OpenAI Chat Completions (`/v1/chat/completions`) & Anthropic Messages (`/v1/messages`), supporting JSON and streaming SSE.
+- **Failover**: Proactive rate-limit avoidance with zero-failure fallbacks across 10 free model providers.
